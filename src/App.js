@@ -22,28 +22,34 @@ import Nav from "./Routing/Nav";
 import { Outlet } from "react-router-dom";
 import DataUsage from "./ContextApi/DataUsage";
 import FormHandle from "./pages/FormHandle";
+import WithBorder from "./HOC/WithBorder";
+import WithText from "./HOC/WithText";
 
 const App = () => {
   // const { id, user } = useContext(UserContext);
   // const [details, setDetails] = useState({ id, user });
   // console.log(details);
 
-  const { id, name } = useContext(UserContext);
-  const [details, setDetails] = useState({ id, name });
+  const TextWithBorder = WithBorder(WithText);
 
-  const data = [
-    {
-      id: 1,
-      name: "John",
-    },
-    {
-      id: 2,
-      name: "Doe",
-    },
-  ];
+  // const { id, name } = useContext(UserContext);
+  // const [details, setDetails] = useState({ id, name });
+
+  // const data = [
+  //   {
+  //     id: 1,
+  //     name: "John",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Doe",
+  //   },
+  // ];
   return (
     <div>
-      <EffectPrac />
+      <TextWithBorder text="Hello HOC!!!!!!" />
+      <TextWithBorder text="hiiii bindu" />
+      {/* <EffectPrac /> */}
       {/* <FormHandle /> */}
       {/* <UserContext.Provider value={{ details, setDetails }}>
         <DataUsage />
